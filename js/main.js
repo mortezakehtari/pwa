@@ -1,11 +1,11 @@
-const apikey = '2b0f2f81ce354dcfac0b216ed32b66b8';
-const main = document.querySelector('#main');
-const defaultSource = "aftenposten";
+// const apikey = '2b0f2f81ce354dcfac0b216ed32b66b8';
+// const main = document.querySelector('#main');
+// const defaultSource = "aftenposten";
 
 window.addEventListener('load',async e =>{
  // 'use strict';
 
- updateNews();
+//  updateNews();
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker
              .register('./sw.js');
