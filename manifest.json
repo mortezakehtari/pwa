@@ -4,7 +4,7 @@
   "theme_color": "#42515d",
   "background_color": "#42515d",
   "display": "standalone",
-  "start_url": ".",
+  "start_url": "./index.html",
   "icons": [{
     "src": "images/hello-icon-128.png",
       "sizes": "128x128",
