@@ -5,7 +5,7 @@
 window.addEventListener('load',async e =>{
  // 'use strict';
 
-//  updateNews();
+ updateNews();
 if('serviceWorker' in navigator){
   try{
       navigator.serviceWorker.register('./sw.js')
@@ -19,9 +19,9 @@ if('serviceWorker' in navigator){
 
 })
 
-async function updateNews(source = defaultSource){
-  const res = await fetch(`https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${apikey}`);
-  const json =  await res.json();
+ function updateNews(source = defaultSource){
+  const res =  fetch(`https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${apikey}`);
+  const json =   res.json();
   main.innerHTML = json.articles.map(createArticle).join("\n")
   
 }
