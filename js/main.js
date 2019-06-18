@@ -19,9 +19,9 @@ if('serviceWorker' in navigator){
 
 })
 
- function updateNews(source = defaultSource){
-  const res =  fetch(`https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${apikey}`);
-  const json =   res.json();
+ async function updateNews(source = defaultSource){
+  const res = await fetch(`https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${apikey}`);
+  const json = await res.json();
   main.innerHTML = json.articles.map(createArticle).join("\n")
   
 }
