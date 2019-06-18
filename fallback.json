@@ -1,0 +1,10 @@
+{
+    "articles":[
+        {
+            "title":"You are not connected to internet!",
+            "url":"",
+            "urlToImage":"images/not-connected.jpg",
+            "description":"please check the internet and try again"
+        }
+    ]
+}
