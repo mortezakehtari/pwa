@@ -5,7 +5,7 @@ const defaultSource = "aftenposten";
 window.addEventListener('load',async e =>{
  // 'use strict';
 
-  await updateNews();
+ updateNews();
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker
              .register('./sw.js');
@@ -16,7 +16,6 @@ window.addEventListener('load',async e =>{
 async function updateNews(source = defaultSource){
   const res = await fetch(`https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${apikey}`);
   const json =  await res.json();
-
   main.innerHTML = json.articles.map(createArticle).join("\n")
   
 }
