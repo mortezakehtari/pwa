@@ -5,7 +5,7 @@ const defaultSource = "aftenposten";
 window.addEventListener('load',async e =>{
  // 'use strict';
 
- updateNews();
+// updateNews();
 if('serviceWorker' in navigator){
   try{
       navigator.serviceWorker.register('./sw.js')
