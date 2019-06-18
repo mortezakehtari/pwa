@@ -3,7 +3,7 @@ const main = document.querySelector('main');
 const defaultSource = "aftenposten";
 
 window.onload = () => {
-  'use strict';
+ // 'use strict';
 
   updateNews();
   if ('serviceWorker' in navigator) {
