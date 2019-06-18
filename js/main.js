@@ -2,18 +2,18 @@ const apikey = '2b0f2f81ce354dcfac0b216ed32b66b8';
 const main = document.querySelector('main');
 const defaultSource = "aftenposten";
 
-window.onload = () => {
+window.addEventListener('load',async e =>{
  // 'use strict';
 
-  updateNews();
+  await updateNews();
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker
              .register('./sw.js');
   }
 
-}
+})
 
-function updateNews(source = defaultSource){
+async function updateNews(source = defaultSource){
   const res = await fetch(`https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${apikey}`);
   const json =  await res.json();
 
@@ -32,4 +32,4 @@ function createArticle(article){
       </a>
   </div>
   `;
-}
+};
