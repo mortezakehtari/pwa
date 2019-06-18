@@ -6,10 +6,16 @@ window.addEventListener('load',async e =>{
  // 'use strict';
 
 //  updateNews();
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker
-             .register('./sw.js');
+if('serviceWorker' in navigator){
+  try{
+      navigator.serviceWorker.register('./sw.js')
+      console.log(`SW Registered`)
   }
+  catch(error){
+     console.log(`SW failed`)
+
+  }
+}
 
 })
 
