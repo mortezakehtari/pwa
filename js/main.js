@@ -23,11 +23,10 @@ if('serviceWorker' in navigator){
   // const res = await fetch(`https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${apikey}`);
   // const json = await res.json();
   // main.innerHTML = json.articles.map(createArticle).join("\n");
-  fetch('https://api.github.com/users/chriscoyier/repos')
+  fetch(`https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${apikey}`)
   .then(response => response.json())
   .then(data => {
-    // Here's a list of repos!
-    alert(data)
+    main.innerHTML = data.articles.map(createArticle).join("\n")
   });
 }
 function createArticle(article){
