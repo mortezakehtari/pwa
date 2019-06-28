@@ -1,23 +1,38 @@
-body {
-  font-family: sans-serif;
+body{
+  font-weight: 300;
+  margin: 8px;
 }
-
-/* Make content area fill the entire browser window */
-html,
-.fullscreen {
+h1{
+  text-transform: uppercase;
+  font-weight: 300;
+}
+header{
   display: flex;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
-
-/* Center the content in the browser window */
-.container {
-  margin: auto;
-  text-align: center;
+#main{
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+  grid-auto-rows: max-content;
+  grid-auto-flow: row dense;
 }
-
-.title {
-  font-size: 3rem;
+.article a{
+  text-decoration: none !important;
+  color: #444444
+}
+.article h2{
+  text-transform: uppercase;
+  font-weight: 300;
+  text-decoration: none;
+  color: #444444
+}
+.article img{
+ width:100%;
+}
+.article p{
+  text-decoration: none;
+  color: #444444
 }
