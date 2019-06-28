@@ -27,6 +27,7 @@ if('serviceWorker' in navigator){
   // .then(data => {
   //   main.innerHTML = data.articles.map(createArticle).join("\n")
   // });
+  
                 $.ajax({
                     type: "GET",
                     url: `https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${apikey}`,
