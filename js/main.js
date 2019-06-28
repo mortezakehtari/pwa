@@ -49,7 +49,6 @@ if('serviceWorker' in navigator){
               $.each( data, function() {
                 main.innerHTML = data.articles.map(createArticle).join("\n")
               });
-              alert(items);
             })
 }
 function createArticle(article){
