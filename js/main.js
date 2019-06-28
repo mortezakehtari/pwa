@@ -28,7 +28,6 @@ if('serviceWorker' in navigator){
   
 }
 
-
 function createArticle(article){
   return `
   <div class = "article">
