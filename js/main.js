@@ -21,7 +21,9 @@ if('serviceWorker' in navigator){
 
  async function updateNews(source = defaultSource){
   const res = await fetch(`https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${apikey}`);
+  alert(res);
   const json = await res.json();
+  alert(json)
   main.innerHTML = json.articles.map(createArticle).join("\n")
   
 }
