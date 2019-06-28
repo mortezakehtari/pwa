@@ -29,7 +29,7 @@ if('serviceWorker' in navigator){
   // });
 
                 $.ajax({
-                    type: "GET",
+                    type: "POST",
                     url: `https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${apikey}`,
                     data: "",
                     contentType: "application/json; charset=utf-8",
@@ -43,7 +43,7 @@ if('serviceWorker' in navigator){
                     }
                 });
             function OnSuccess(response) {
-                alert(response.d)
+                alert(response)
                 }
 
 }
