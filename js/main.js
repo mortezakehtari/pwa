@@ -3,9 +3,9 @@ const main = document.querySelector('#main');
 const defaultSource = "aftenposten";
 
 window.addEventListener('load',async e =>{
- // 'use strict';
+  'use strict';
 
-// updateNews();
+ updateNews();
 if('serviceWorker' in navigator){
   try{
       navigator.serviceWorker.register('./sw.js')
