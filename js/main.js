@@ -22,29 +22,11 @@ if('serviceWorker' in navigator){
   // const res = await fetch(`https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${apikey}`);
   // const json = await res.json();
   // main.innerHTML = json.articles.map(createArticle).join("\n");
-  // fetch(`https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${apikey}`)
-  // .then(response => response.json())
-  // .then(data => {
-  //   main.innerHTML = data.articles.map(createArticle).join("\n")
-  // });
-
-                $.ajax({
-                    type: "POST",
-                    url: `https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${apikey}`,
-                    data: "",
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "json",
-                    success: OnSuccess,
-                    failure: function (response) {
-                        alert("fail");
-                    },
-                    error: function (response) {
-                        alert("error");
-                    }
-                });
-            function OnSuccess(response) {
-                alert(response)
-                }
+  fetch(`https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${apikey}`)
+  .then(response => response.json())
+  .then(data => {
+    main.innerHTML = data.articles.map(createArticle).join("\n")
+  });
 
 }
 function createArticle(article){
