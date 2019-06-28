@@ -7,7 +7,7 @@ var filesToCache = [
   '/js/jquery.js',
   '/manifest.json',
   './fallback.json',
-    './images/not-connected.jpg'
+    '/images/not-connected.jpg'
 ];
 
 
