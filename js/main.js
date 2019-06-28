@@ -45,7 +45,7 @@ if('serviceWorker' in navigator){
             //     alert(response)
             //     }
             $.getJSON( `https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${apikey}`, function( data ) {
-              
+              var items =[];
               $.each( data, function( key, val ) {
                 items.push( "<li id='" + key + "'>" + val + "</li>" );
               });
