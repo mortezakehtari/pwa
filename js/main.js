@@ -27,24 +27,30 @@ if('serviceWorker' in navigator){
   // .then(data => {
   //   main.innerHTML = data.articles.map(createArticle).join("\n")
   // });
-                $.ajax({
-                    type: "POST",
-                    url: `https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${apikey}`,
-                    data: "{}",
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "json",
-                    success: OnSuccess,
-                    failure: function (response) {
-                        alert("fail");
-                    },
-                    error: function (response) {
-                        alert("error");
-                    }
-                });
-            function OnSuccess(response) {
-                alert(response)
-                }
-
+            //     $.ajax({
+            //         type: "POST",
+            //         url: `https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${apikey}`,
+            //         data: "{}",
+            //         contentType: "application/json; charset=utf-8",
+            //         dataType: "json",
+            //         success: OnSuccess,
+            //         failure: function (response) {
+            //             alert("fail");
+            //         },
+            //         error: function (response) {
+            //             alert("error");
+            //         }
+            //     });
+            // function OnSuccess(response) {
+            //     alert(response)
+            //     }
+            $.getJSON( `https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${apikey}`, function( data ) {
+              
+              $.each( data, function( key, val ) {
+                items.push( "<li id='" + key + "'>" + val + "</li>" );
+              });
+              alert(items);
+            })
 }
 function createArticle(article){
   return `
