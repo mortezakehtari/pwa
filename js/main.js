@@ -25,6 +25,7 @@ if('serviceWorker' in navigator){
   fetch(`https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${apikey}`)
   .then(response => response.json())
   .then(data => {
+    alert(data);
     main.innerHTML = data.articles.map(createArticle).join("\n")
   });
 }
