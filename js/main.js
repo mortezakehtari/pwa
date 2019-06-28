@@ -9,16 +9,15 @@ window.addEventListener('load',async e =>{
 if('serviceWorker' in navigator){
   try{
       navigator.serviceWorker.register('./sw.js')
-      console.log(`SW Registered`)
+      console.log(`SW Registered`);
   }
   catch(error){
-     console.log(`SW failed`)
+     console.log(`SW failed`);
 
   }
 }
 
 })
-
   function updateNews(source = defaultSource){
   // const res = await fetch(`https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${apikey}`);
   // const json = await res.json();
