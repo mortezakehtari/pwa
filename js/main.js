@@ -5,8 +5,7 @@ const defaultSource = "aftenposten";
 window.addEventListener('load',async e =>{
   'use strict';
 
- //updateNews();
- getMoviesFromApi();
+ updateNews();
 if('serviceWorker' in navigator){
   try{
       navigator.serviceWorker.register('./sw.js')
@@ -23,22 +22,30 @@ if('serviceWorker' in navigator){
   // const res = await fetch(`https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${apikey}`);
   // const json = await res.json();
   // main.innerHTML = json.articles.map(createArticle).join("\n");
-  fetch(`https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${apikey}`)
-  .then(response => response.json())
-  .then(data => {
-    main.innerHTML = data.articles.map(createArticle).join("\n")
-  });
-}
-async function getMoviesFromApi(source = defaultSource) {
-  try {
-    let response = await fetch(
-      `https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${apikey}`,
-    );
-    let responseJson = await response.json();
-    main.innerHTML = responseJson.articles.map(createArticle).join("\n")
-  } catch (error) {
-    console.error(error);
-  }
+  // fetch(`https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${apikey}`)
+  // .then(response => response.json())
+  // .then(data => {
+  //   main.innerHTML = data.articles.map(createArticle).join("\n")
+  // });
+
+                $.ajax({
+                    type: "POST",
+                    url: `https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${apikey}`,
+                    data: "{}",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: OnSuccess,
+                    failure: function (response) {
+                        alert("fail");
+                    },
+                    error: function (response) {
+                        alert("error");
+                    }
+                });
+            function OnSuccess(response) {
+                alert(response)
+                }
+
 }
 function createArticle(article){
   return `
