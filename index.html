@@ -25,9 +25,6 @@
 
   </div>
   <script>
-  const apikey = '2b0f2f81ce354dcfac0b216ed32b66b8';
-const main = document.querySelector('#main');
-const defaultSource = "aftenposten";
 
 $(function(){
   alert("ready")
@@ -44,7 +41,8 @@ if('serviceWorker' in navigator){
 }
 
 })
-  function updateNews(source = defaultSource){
+  function updateNews(){
+    var main = $("#main")
   // const res = await fetch(`https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${apikey}`);
   // const json = await res.json();
   // main.innerHTML = json.articles.map(createArticle).join("\n");
