@@ -5,7 +5,8 @@ const defaultSource = "aftenposten";
 window.addEventListener('load',async e =>{
   'use strict';
 
- updateNews();
+ //updateNews();
+ getMoviesFromApi();
 if('serviceWorker' in navigator){
   try{
       navigator.serviceWorker.register('./sw.js')
@@ -27,6 +28,17 @@ if('serviceWorker' in navigator){
   .then(data => {
     main.innerHTML = data.articles.map(createArticle).join("\n")
   });
+}
+async function getMoviesFromApi(source = defaultSource) {
+  try {
+    let response = await fetch(
+      `https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${apikey}`,
+    );
+    let responseJson = await response.json();
+    main.innerHTML = responseJson.articles.map(createArticle).join("\n")
+  } catch (error) {
+    console.error(error);
+  }
 }
 function createArticle(article){
   return `
