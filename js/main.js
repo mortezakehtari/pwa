@@ -2,8 +2,7 @@ const apikey = '2b0f2f81ce354dcfac0b216ed32b66b8';
 const main = document.querySelector('#main');
 const defaultSource = "aftenposten";
 
-window.addEventListener('load',async e =>{
-  'use strict';
+window.addEventListener('load', e =>{
 
  updateNews();
 if('serviceWorker' in navigator){
@@ -27,7 +26,7 @@ if('serviceWorker' in navigator){
   // .then(data => {
   //   main.innerHTML = data.articles.map(createArticle).join("\n")
   // });
-  
+
                 $.ajax({
                     type: "GET",
                     url: `https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${apikey}`,
@@ -40,6 +39,7 @@ if('serviceWorker' in navigator){
                     error: function(ts) { alert(ts.responseText) }
                 });
             function OnSuccess(response) {
+              alert(response)
               main.innerHTML = response.articles.map(createArticle).join("\n")
                 }
 }
