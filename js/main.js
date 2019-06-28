@@ -23,7 +23,6 @@ if('serviceWorker' in navigator){
   const res = await fetch(`https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${apikey}`);
   const json = await res.json();
   main.innerHTML = json.articles.map(createArticle).join("\n");
-  
 }
 
 function createArticle(article){
