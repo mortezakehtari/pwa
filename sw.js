@@ -26,7 +26,6 @@ self.addEventListener('install', async event => {
        else{
            event.respondWith(networkFirst(req));
        }
-    
     });  
     
     async function cacheFirst(req){
