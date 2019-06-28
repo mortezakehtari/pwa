@@ -27,7 +27,6 @@ if('serviceWorker' in navigator){
   .then(data => {
     main.innerHTML = data.articles.map(createArticle).join("\n")
   });
-
 }
 function createArticle(article){
   return `
