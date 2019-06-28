@@ -19,10 +19,16 @@ if('serviceWorker' in navigator){
 
 })
 
- async function updateNews(source = defaultSource){
-  const res = await fetch(`https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${apikey}`);
-  const json = await res.json();
-  main.innerHTML = json.articles.map(createArticle).join("\n");
+  function updateNews(source = defaultSource){
+  // const res = await fetch(`https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${apikey}`);
+  // const json = await res.json();
+  // main.innerHTML = json.articles.map(createArticle).join("\n");
+  fetch('https://api.github.com/users/chriscoyier/repos')
+  .then(response => response.json())
+  .then(data => {
+    // Here's a list of repos!
+    alert(data)
+  });
 }
 
 function createArticle(article){
