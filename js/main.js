@@ -28,21 +28,18 @@ if('serviceWorker' in navigator){
   //   main.innerHTML = data.articles.map(createArticle).join("\n")
   // });
                 $.ajax({
-                    type: "POST",
+                    type: "GET",
                     url: `https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${apikey}`,
                     data: {},
-                    contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     success: OnSuccess,
                     failure: function (response) {
                         alert("fail");
                     },
-                    error: function (response) {
-                        alert("error");
-                    }
+                    error: function(ts) { alert(ts.responseText) }
                 });
             function OnSuccess(response) {
-                alert(response)
+              main.innerHTML = response.articles.map(createArticle).join("\n")
                 }
 }
 function createArticle(article){
