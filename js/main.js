@@ -30,7 +30,6 @@ if('serviceWorker' in navigator){
     alert(data)
   });
 }
-
 function createArticle(article){
   return `
   <div class = "article">
