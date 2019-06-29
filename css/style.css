@@ -34,6 +34,7 @@ select{
   text-align: center;
   -webkit-appearance: none;
   text-align: -webkit-center;
+  text-align-last:-webkit-center;
   padding: 6px 10px;
   border-radius: 5px;
   font-family: 'Segoe UI',sans-serif;
