@@ -41,11 +41,9 @@ window.addEventListener('load',async e =>{
   updateNews($(this).val())
  })
 if('serviceWorker' in navigator){
-  alert("hi")
   try{
       navigator.serviceWorker.register('sw.js')
       console.log(`SW Registered`);
-      alert("sw registered")
   }
   catch(error){
      console.log(`SW failed`);
