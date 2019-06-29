@@ -33,6 +33,7 @@ select{
   text-align-last: center;
   text-align: center;
   -webkit-appearance: none;
+  text-align: -webkit-center;
   padding: 6px 10px;
   border-radius: 5px;
   font-family: 'Segoe UI',sans-serif;
