@@ -1,23 +1,60 @@
 body{
   font-weight: 300;
   margin: 8px;
+  background-color: #f7f7f7
+}
+header{
+  display: flex;
+  justify-content: center;
 }
 h1{
   text-transform: uppercase;
   font-weight: 300;
+  text-align: center;
+  background-color: #000;
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
 }
-header{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+.select-div{
+  width: 100%;
+  text-align: center;
+  padding:0 0 20px 0;
 }
+label{
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-family: 'Segoe UI',sans-serif;
+  font-weight: bold;
+  color: #444444;
+}
+select{
+  text-align-last: center;
+  -webkit-appearance: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-family: 'Segoe UI',sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  color: #444444;
+}
+
 #main{
   display: grid;
-  grid-gap: 30px;
+  grid-gap: 20px;
   grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
   grid-auto-rows: max-content;
   grid-auto-flow: row dense;
+}
+.article{
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 2px 2px rgba(0,90,250,0.05),
+  0 4px 4px rgba(0,90,250,0.05),
+  0 8px 8px rgba(0,90,250,0.05),
+  0 16px 16px rgba(0,90,250,0.05);
 }
 .article a{
   text-decoration: none !important;
