@@ -96,6 +96,7 @@ function createArticle(article){
 };
 
 function hideModal(){
+  $('body').css("overflow", "auto")
   $('#modal').removeClass('on');
   $('#modal-body').html('');
 }
@@ -121,6 +122,7 @@ function showModal(event){
       </div>
   `
   $('#modal-body').append(news);
+  $('body').css("overflow", "hidden")
   $('#modal').addClass('on')
 }
   </script>
