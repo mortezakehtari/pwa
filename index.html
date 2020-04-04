@@ -32,6 +32,16 @@
   <div id="main">
 
   </div>
+  <div id="modal" class="">
+    <div class="modal-header">
+      <span onclick="hideModal()">﹀</span>
+      <span class="title">News</span>
+      <span></span>
+    </div>
+    <div id="modal-body">
+      
+    </div>
+  </div>
   <script>
 
 window.addEventListener('load',async e =>{
@@ -75,14 +85,44 @@ async function updateSources(){
 function createArticle(article){
   return `
   <div class = "article">
-      <a href="${article.url}">
+      <a onclick="showModal(this)" href="javascript:void(0);">
           <h3>${article.title}</h3>
           <img src="${article.urlToImage}" alt="${article.title}">
-          <p>${article.description}</p>
+          <p class='subtitle'>${article.description}</p>
+          <p class='content' style='display:none'>${article.content}</p>
       </a>
   </div>
   `;
 };
+
+function hideModal(){
+  $('#modal').removeClass('on');
+  $('#modal-body').html('');
+}
+function showModal(event){
+  var title = $(event).children('h3').html();
+  var image = $(event).children('img').attr('src');
+  var subtitle = $(event).children('.subtitle').html();
+  var content = $(event).children('.content').html();
+
+  var news = `
+  <div id="modal-image">
+        <img src="${image}" alt="${title}">
+      </div>
+      <div id="modal-content">
+        <h4>${title}</h4>
+        <p class="modal-subtitle">
+          ${subtitle}
+        </p>
+        <div class="modal-devider"></div>
+        <div class="modal-text">
+          ${content}
+        </div>
+      </div>
+  `
+  $('#modal-body').append(news);
+  $('#modal').addClass('on')
+}
   </script>
   <!-- <script src="js/main.js"></script> -->
 
